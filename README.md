@@ -8,6 +8,7 @@
 
 - 此项目实现了一个基础管理系统模型
 - 并提供了多个可用库提供高扩展性的开发组件
+- 本项目遵守 `MIT` 开源协议
 
 
 
@@ -66,7 +67,7 @@ mingw32-make
 
 ```c
 worker_init();
-Worker* worker = httper_create("http://test.com/hello", 80, message); //参数三
+Worker* worker = httper_create("http://test.com/hello", 80, message); //参数三为事件回调函数
 if(worker == NULL){
     printf("创建httper-worker失败,请检查是否为正常Url!\n");
     exit(0);
@@ -79,7 +80,7 @@ worker_connect(worker, 30);
 ```c
 worker_init();
 int error;
-Worker* worker = worker_create("127.0.0.1", 8888, &error); //参数三
+Worker* worker = worker_create("127.0.0.1", 8888, &error); //参数三为错误码
 if(worker == NULL){
     printf("创建worker失败,错误代码: %d!\n", error);
     exit(0);
